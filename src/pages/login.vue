@@ -6,7 +6,7 @@ import useAuth from "../composable/useAuth";
 import useError from "../composable/useError";
 import { useTimeout, promiseTimeout} from '@vueuse/core';
 
-const {isAuthenticated, login, signup} = useAuth();
+const {isAuthenticated, login, signup, googleLogin} = useAuth();
 
 const username = ref("");
 const password = ref("");
@@ -16,6 +16,11 @@ const router = useRouter();
 const logginIn = async () => {
     await login(username.value, password.value);
      goToHome();  
+}
+
+const google = async() => {
+    await googleLogin();
+    goToHome();
 }
 
 const signingUp = async () => {
@@ -53,8 +58,10 @@ const { ready, start } = useTimeout(3000, { controls: true }, true)
             @click="signingUp" 
             class="w-1/2 py-2 text-orange-200 bg-orange-600 rounded-lg">
             Sign Up</button>
-                        </div>
-
+            </div>
+        <button @click="google" class="flex justify-center py-2 bg-white rounded-lg hover:bg-gray-200"><img 
+        src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+        alt=""></button>
         </form>
     </div>
     <div
