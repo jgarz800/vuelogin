@@ -13,28 +13,28 @@ const loggingOut = () => {
 </script>
 
 <template>
-<div class="text-indigo-200 bg-indigo-800">
+<div class="text-red-200 bg-red-800">
 <div class="container flex items-center justify-between mx-auto">
-        <h1 class="text-3xl font-thin tracking-tighter">Vue<span class="font-normal">FakeAuth</span></h1>
+        <h1 class="text-3xl font-thin tracking-tighter">Vue<span class="font-normal">RealAuth</span></h1>
         <nav>
             <ul class="flex space-x-4">
                 <router-link to="/">
-                <li class="px-4 py-8 hover:cursor-pointer hover:bg-indigo-500 hover:text-indigo-800">
+                <li class="px-4 py-8 hover:cursor-pointer hover:bg-red-500 hover:text-red-800">
                     Home
                 </li>
                 </router-link>
                 <router-link :to = "{ name: 'About'}">
-                    <li class="px-4 py-8 hover:cursor-pointer hover:bg-indigo-500 hover:text-indigo-800">About</li>
+                    <li class="px-4 py-8 hover:cursor-pointer hover:bg-red-500 hover:text-red-800">About</li>
                 </router-link>
                 <router-link v-if="!isAuthenticated" :to = "{ path: '/login', name:'Login'}">
-                    <li class="px-4 py-8 hover:cursor-pointer hover:bg-indigo-500 hover:text-indigo-800">Login</li>
+                    <li class="px-4 py-8 hover:cursor-pointer hover:bg-red-500 hover:text-red-800">Login</li>
                 </router-link>
                 <div v-else class="flex">
                     <router-link :to = "{ name:'Secret'}">
-                        <li class="px-4 py-8 hover:cursor-pointer hover:bg-indigo-500 hover:text-indigo-800">Secret</li>
+                        <li class="px-4 py-8 hover:cursor-pointer hover:bg-red-500 hover:text-red-800">Secret</li>
                     </router-link>
                     <button @click="loggingOut">
-                        <li class="px-4 py-8 hover:cursor-pointer hover:bg-indigo-500 hover:text-indigo-800">Logout</li>
+                        <li class="px-4 py-8 hover:cursor-pointer hover:bg-red-500 hover:text-red-800">Logout</li>
                     </button>
                 </div>
          </ul>
