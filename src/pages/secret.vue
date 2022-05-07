@@ -1,13 +1,31 @@
 <template>
-
-    <div class="flex items-center justify-center h-screen-nonav">
-        <iframe 
-        width="890" 
-        height="560" 
-        src="https://www.youtube.com/embed/Lcw4Xlp0AhI" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen></iframe>
+<h1 class="mt-8 text-6xl font-thin tracking-tighter text-center">
+    Cool Chat
+  </h1>
+  <div
+    class="
+      min-h-[500px]
+      w-full
+      mt-8
+      rounded-lg
+      shadow-2xl
+      flex flex-col
+      justify-between
+    "
+  >
+    <ul class="p-4 space-y-4">
+      <li v-for="n in 5">
+        <div class="flex justify-between px-4 py-2 bg-gray-200 rounded-lg">
+          <span>Message itself</span><span>by Author Name</span>
+        </div>
+      </li>
+    </ul>
+    <div>
+      <input
+        class="w-full p-4 rounded-lg focus:outline-none focus:bg-orange-200"
+        type="text"
+        placeholder="Type a message..."
+      />
     </div>
+  </div>
 </template>
